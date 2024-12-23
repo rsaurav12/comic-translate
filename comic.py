@@ -1,4 +1,5 @@
 import os, sys
+import argparse
 from PySide6.QtGui import QIcon
 from PySide6.QtCore import QSettings, QTranslator, QLocale
 from app.ui.dayu_widgets.qt import application
@@ -7,6 +8,15 @@ from app.translations import ct_translations
 from app import icon_resource
 
 def main():
+    if args.file_path:
+        test.thread_load_images(file_path)
+
+    if args.headless:
+        test.start_batch_process()
+        
+    else:
+        test.show()
+        
     if sys.platform == "win32":
         # Necessary Workaround to set Taskbar Icon on Windows
         import ctypes
